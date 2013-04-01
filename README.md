@@ -14,11 +14,12 @@ Avec cette API, il devient très simple de manipuler des informations persistant
 Il ne sera plus nécessaire (presque dans la majorité des cas) d'effectuer des requêtes à votre base de données au format SQL.
 
 L'API se compose de plusieurs outils nommés par l'appellation "drivers" qui régissent chacun des ensembles d'actions. On en trouve 5 :
-	* Streams, le gestionnaire des tables de votre base de données,
-	* Fields, l’outil des champs de données pour vos tables,
-	* Entries, le dispositif de manipulation des données (création, lecture, mise à jour et suppression - CRUD),
-	* CP (control panel routines), une mécanique de génération de formulaire dans le panel administratif,
-	* Utilities, le driver pour les manipulations d'intégration de tables SQL au format Stream.
+
+* Streams, le gestionnaire des tables de votre base de données,
+* Fields, l’outil des champs de données pour vos tables,
+* Entries, le dispositif de manipulation des données (création, lecture, mise à jour et suppression - CRUD),
+* CP (control panel routines), une mécanique de génération de formulaire dans le panel administratif,
+* Utilities, le driver pour les manipulations d'intégration de tables SQL au format Stream.
 
 Il faut savoir également que pour compléter et s'étendre à un maximum de cas d'utilisation, l'API intègre ses propres types de champs, les "fields types", qui sont de petites bibliothèques (de fonctionnalités). Elles ont pour rôle de manipuler les données au cours de leurs utilisations et vérifient que c'est en bonne et due forme.
 Ainsi, cela assure aux applications web leurs bons fonctionnements sans accro.
