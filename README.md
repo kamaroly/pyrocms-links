@@ -1,42 +1,42 @@
-# Construire un module avec l'API Stream #
+# Build a module with the Stream API #
 
-	- L'API Stream, c'est quoi?
-	- Pourquoi c'est mieux?
-	- Comment ca marche?
-
-
-## L'API Stream, c'est quoi? ##
-
-L'API Stream est, comme beaucoup d'API, une abstraction d'une logique métier (souvent) longue et répétitive.
-Elle s'applique aux manipulations de la base de données et vise à les rendre plus simples et plus courtes.
-
-Avec cette API, il devient très simple de manipuler des informations persistantes dans un langage TOUT PHP!
-Il ne sera plus nécessaire (presque dans la majorité des cas) d'effectuer des requêtes à votre base de données au format SQL.
-
-L'API se compose de plusieurs outils nommés par l'appellation "drivers" qui régissent chacun des ensembles d'actions. On en trouve 5 :
-
-* Streams, le gestionnaire des tables de votre base de données,
-* Fields, l’outil des champs de données pour vos tables,
-* Entries, le dispositif de manipulation des données (création, lecture, mise à jour et suppression - CRUD),
-* CP (control panel routines), une mécanique de génération de formulaire dans le panel administratif,
-* Utilities, le driver pour les manipulations d'intégration de tables SQL au format Stream.
-
-Il faut savoir également que pour compléter et s'étendre à un maximum de cas d'utilisation, l'API intègre ses propres types de champs, les "fields types", qui sont de petites bibliothèques (de fonctionnalités). Elles ont pour rôle de manipuler les données au cours de leurs utilisations et vérifient que c'est en bonne et due forme.
-Ainsi, cela assure aux applications web leurs bons fonctionnements sans accro.
-
-Note: Les field types sont eux même des abstractions de champs de base de données (VARCHAR, TEXT, INT, BOOL etc..). Et permettent de rester concret dans un ensemble tout PHP.
+- The Stream API, what is it?
+- Why is it better?
+- How it works?
 
 
-## Pourquoi c'est mieux? ##
+## The Stream API, what is it? ##
 
-Comme présente par John Corry (http://vimeo.com/42722025), PyroCMS est un très bon manager de contenu web qui va à l'essentiel en réduisant toujours plus le code à produire, et donc les erreurs humaines, et donc les longues heures de recherche pour réparer ses erreurs, et donc obtenir toujours plus de satisfaction.
+The Stream API is, like many API, an abstraction of business logic (often) long and repetitive.
+It applies to the handling of the database and aims to make them simpler and shorter.
 
-Une fois de plus, cette API hérite de tout ce fastidieux travail de réflexion que réalise pour nous l'équipe PyroCMS. Nous allons bientôt passer à la pratique, mais imaginez-vous déjà à l'instant de la conception de votre prochaine application. Vous allez produire moins de code que d'habitude, vous préoccuper de moins de bugs que d'habitude et vous obtiendrez une application fiable et facile à maintenir, que demandais de plus?
+With this API, it becomes very easy to manipulate information in a persistent language PHP ONLY!
+It is no longer necessary (almost in the majority of cases) to query your database in SQL format.
+
+The API consists of several tools called by the name "drivers" that govern each of the sets of actions. We found 5:
+
+* Streams, the manager of the tables in your database.
+* Fields tool data fields for your tables.
+* Entries, the device data manipulation (create, read, update and delete - CRUD).
+* CP (control panel routines), a mechanical form generation in the administrative panel.
+* Utilities driver for handling integration of SQL tables Stream format.
+
+You should also know that to complement and extend to a maximum use case, the API includes its own types of fields, "fields types", which are small libraries (features). Their role is to manipulate data in their applications and verify that it is in proper form.
+Thus, it ensures web applications without their good functioning addict.
+
+Note: The field types are themselves abstractions of database fields (VARCHAR, TEXT, INT, BOOL etc. ..). And allow to remain in a specific set any PHP.
 
 
-## Comment ça marche? ##
+## Why is it better? ##
 
-Nous allons donc nous mettre en situation pour réaliser un module simple, un petit gestionnaire de liens, simple et rapide qui vous permettra de mettre en ligne vos liens ou vidéos Youtube.
+As tell by John Corry (http://vimeo.com/42722025), PyroCMS is a very good web content manager that runs mostly in further reducing the code to produce, and therefore human error, and therefore long hours of research to fix his mistakes, and thus get even more satisfaction.
 
-Pour ce faire, vous devrez dors et déjà être un peu familiariser avec PyroCMS.
+Once again, this API inherits all tedious work that makes us think the team PyroCMS. We will soon go to practice, but imagine yourself already at the time of designing your next application. You will produce less code than usual, worry less bugs than usual and you will get an application reliable and easy to maintain, that asked more?
+
+
+## How does it work? ##
+
+So we'll put in a position to make a simple module, a small link manager, quick and easy allowing you to upload your links or youtube videos links.
+
+To do this, you should be a little familiar with PyroCMS.
 
