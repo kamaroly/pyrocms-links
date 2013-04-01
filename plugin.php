@@ -33,7 +33,7 @@ class Plugin_links extends Plugin
 		$type = $this->attribute('type', null);
 
 		/**
-		 * Les parametres de notre stream.
+		 * Les paramètres de notre stream.
 		 */
 		$params = array(
 			'stream'	=> 'links',
@@ -41,10 +41,10 @@ class Plugin_links extends Plugin
 		);
 
 		/**
-		 * On ajout un parametre, where pour appliquer nos filtres de
+		 * On ajout un paramètre, where pour appliquer nos filtres de
 		 * recherche.
 		 *
-		 * Il est tout a fait possible de cumuler les filtres de cette facon :
+		 * Il est tout a fait possible de cumuler les filtres de cette façon :
 		 * 'slug="'.$slug.'" AND autre_filtre="valeur"'
 		 */
 		if (($slug = $this->attribute('slug', null)))
@@ -53,13 +53,13 @@ class Plugin_links extends Plugin
 		}
 		
 		/**
-		 * On fait la requette pour obtenir nos donnees.
+		 * On fait la requête pour obtenir nos données.
 		 */
 		$entries = $this->streams->entries->get_entries($params);
 
 		/**
-		 * On parcours ensuite simplement nos entrees pour les mettre au format
-		 * que nous voulons.
+		 * On parcourt ensuite simplement nos entrées pour les mettre
+		 * au format que nous voulons.
 		 */
 		foreach ($entries['entries'] as $link)
 		{
