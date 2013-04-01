@@ -9,9 +9,15 @@
 class Plugin_links extends Plugin
 {    
 	/**
+	 *
+	 * Plugin optional arguments:
+	 * - type : youtube, display video related by link
+	 * - slug : the link slug
+	 * - width : the video width
+	 * - height : the video height
+	 *
 	 * {{links:show type="youtube" slug="" width="" height=""}}
 	 * 	{{link}}
-	 * {{/links:show}}
 	 *
 	 * Optional link attribute, if no type is attributed
 	 *
@@ -25,6 +31,8 @@ class Plugin_links extends Plugin
 	 * 	{{ordering_count}}
 	 * 	{{name}}
 	 * 	{{slug}}
+	 *
+	 * {{/links:show}}
 	 */
 	public function show()
 	{
