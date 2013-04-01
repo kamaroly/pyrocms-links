@@ -177,9 +177,7 @@ class Module_links extends Module
         $this->load->driver('Streams');
 		
 		/**
-		 *
-		 *
-		 *
+		 * Pour supprimer notre module, nous supprimerons simplement son namespace.
 		 */
 		$this->streams->utilities->remove_namespace('links');
 
