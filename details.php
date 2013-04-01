@@ -43,69 +43,69 @@ class Module_links extends Module
     public function install()
     {
     	/**
-    	 * On charge le driver Streams
+    	 * Load the driver Streams
     	 */
         $this->load->driver('Streams');
 	
         $fields = array(
         	/**
-			 * Nous paramétrons ensuite chaque champs
+			 * Then we configure each field
 			 */
 			array(
 				/**
-				 * On indique le namespace auquel le champ est lie
+				 * It indicates the namespace to which the field is bound
 				 */
 				'namespace'			=> 'links',
 
 				/**
-				 * On indique également le stream auquel le champ appartient
+				 * It also indicates the stream to which the field belongs to
 				 */
 				'assign'			=> 'links',
 
 				/**
-				 * On donne un nom à notre champ,
-				 * on peut y mettre soit un nom soit un tag pour la traduction
+				 * It gives a name to our field,
+				 * we can put a name or is a tag for the translation
 				 */
 				'name'				=> 'lang:links.fields.name',
 
 				/**
-				 * On fournit le slug de notre champ ...
+				 * We provide our field slug ...
 				 */
 				'slug'				=> 'name',
 
 				/**
-				 * ... et le type de notre champ,
-				 * On troue la liste des champs à cette url : http://docs.pyrocms.com/2.2/manual/developers/tools/streams-api/core-field-types
+				 * ... the type of our field.
+				 * There is the list of fields to this url : http://docs.pyrocms.com/2.2/manual/developers/tools/streams-api/core-field-types
 				 */
 				'type'				=> 'text',
 
 				/**
-				 * Chaque champ peut être personnalise via la variable 'extra'
+				 * Each field can be personalized via the variable 'extra'
 				 */
 				'extra'				=> array(
-					// Pour un champ text, nous pouvons personnalise
-					// la longueur maximale de la chaine ...
+					// For a text field,
+					// we can customize the maximum length of the string ...
 					'max_length'		=> '70',
 
-					// ... Ou encore le texte par defaut.
+					// ... Or the default text.
 					'default_value'		=> 'Link title'
 				),
 
 				/**
-				 * Pour chaque stream, il faut spécifie une de ces variables comme title_column (titre de colonne).
-				 * Lorsque vous utiliserait un prochain stream avec un champ 'relationship', et qu'il sera lié
-				 * à notre stream courant (rappel, stream : links et namspace : links), se sera la colonne 'name'
-				 * qui fera office de titre dans la liste de sélection.
+				 * For each stream must specify one of these variables as title_column (column heading).
+				 * When you utilize a stream next to a field 'relationship',
+				 * and will be linked to our current stream (recall stream: links and namspace: links),
+				 * it will be the column 'name' which will act as the list selection.
 				 */
 				'title_column'		=> true,
 
 				/**
-				 * Est ce que notre nom est requis lors de l'ajout d'un lien? Ici, oui.
+				 * Is what our name is required when adding a link? Here, yes.
 				 */
 				'required'			=> true,
 
 				/**
-				 * Est ce que notre champ nom est unique? Ici, oui (un lien sera égale a un titre).
+				 * Is what our name field is unique? Here, yes (a link will be equal to a title).
 				 */
 				'unique'			=> true
 			),
@@ -138,25 +138,24 @@ class Module_links extends Module
         );
 
 		/**
-		 * Maintenant, nous ajoutons notre Stream.
+		 * Now we add our Stream.
 		 */
 		$this->streams->streams->add_stream('lang:links.title', 'links', 'links', 'links_', NULL);
 
 		/**
-		 * Et maintenant, on ajoute les champs a notre stream.
+		 * And now we add the fields to our stream.
 		 */
 		$this->streams->fields->add_fields($fields);
 
 
 		/**
-		 * Nous créons une nouvelle variable pour faire des modifications dans notre stream
-		 * et ainsi changer son comportement.
+		 * We create a new variable to changes in our stream and thus change its behavior.
 		 */
 		$update_data = array(
 			/**
-			 * L'option 'view_options', permet d'identifier les champs que nous voulons voir apparaitre
-			 * dans le listing du panneau d'administration. Ici, nous verrons le nom de notre
-			 * lien ainsi que son slug.
+			 * The option View_Options' identifies the fields that we want
+			 * to appear in the listing of the administration panel.
+			 * Here we see the name of our relationship and its slug.
 			 */
 			'view_options'	=> array(
 				'name',
@@ -165,7 +164,7 @@ class Module_links extends Module
 		);
 
 		/**
-		 * Enfin, nous mettons à jour notre stream avec nos nouveaux paramètres
+		 * Finally, we update our stream with our new settings
 		 */
 		$this->streams->streams->update_stream('links', 'links', $update_data);
 
@@ -177,7 +176,7 @@ class Module_links extends Module
         $this->load->driver('Streams');
 		
 		/**
-		 * Pour supprimer notre module, nous supprimerons simplement son namespace.
+		 * To remove our module, we simply delete the namespace.
 		 */
 		$this->streams->utilities->remove_namespace('links');
 
