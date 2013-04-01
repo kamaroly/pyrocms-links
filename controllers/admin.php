@@ -19,31 +19,31 @@ class Admin extends Admin_Controller
     }
 
     /**
-     * Le listing des éléments.
-     * Note: la variable $pagination_offset n'est pas utilise,
-     * mais permet de mettre en oeuvre la pagination automatise par Streams CP.
+     * The listing of items.
+     * Note: The variable $ pagination_offset is not used,
+     * but can implement automated pagination Streams by CP.
      */
     public function index($pagination_offset = 0)
     {
         /**
-         * Dans l'administration, et cela grâce au Stream CP, il suffit maintenant de configurer
-         * ce que nous voulons voir apparaitre, et cela sans effort!
+         * In the administration, thanks to Stream PC,
+         * now just configure what we want to see appear, without effort!
          */
 		$extra = array(
 
-            // On renseigne le titre de la page courante
+            // It informs the title of the current page
             'title'				=> lang('links.title'),
 
             /**
-             * Pour chaque ligne de notre listing, nous allons vouloir effectuer des actions
-             * comme l'édition ou la suppression de lien.
+             * For each row in our list, we want to perform actions
+             * such as editing or deleting a link.
              */
             'buttons'			=> array(
                 /**
-                 * Un bouton est constitue d'un label (un titre)
-                 * et d'une URL (le chemin de la page a exécuter).
-                 * On note que l'URL est une URI (une URL sans le domaine, autrement dit la fin de l'URL)
-                 * et que l'on utilise '-entry_id-' pour spécifier l'id du lien de la ligne courante.
+                 * A button is a label (a title)
+                 * and a URL (the page path to execute).
+                 * Note that the URL is a URI (a URL without the domain, ie the end of the URL)
+                 * and it uses '-entry_id-' to specify the id of the link of the current line.
                  */
                 array(
                     'label'     => lang('global:edit'),
@@ -58,29 +58,29 @@ class Admin extends Admin_Controller
 		);
 
         /**
-         * Pour l'affichage, rien de plus simple! Le Stream CP surcharge les vues. Il n'y a plus besoin
-         * de faire du HTML, Stream CP s'occupe de tout!
+         * For display, nothing could be easier! Stream PC overhead views.
+         * There is no need to HTML, Stream CP takes care of everything!
          */
         $this->streams->cp->entries_table('links', 'links', 10, 'admin/links/index', TRUE, $extra);
     }
 
     /**
-     * La création d'un élément
+     * The creation of a link
      */
     public function create()
     {
         /**
-         * Comme pour le listing à l'accueil, il suffit de renseigner quelques paramètres.
+         * As for listing the home, simply enter a few parameters.
          */
         $extra = array(
-            // On retrouve le titre de la page
+            // We find again the title of the page
 			'title'				=> lang('links.create.title'),
 
             /**
-             * Et puisque cette fois il s'agit d'une insertion, nous spécifions:
-             * - Le message de succès.
-             * - Le message d'erreur.
-             * - Et le lien de redirection une fois l'insertion finit.
+             * And since this time it is an insertion, we specify:
+             * - The success message.
+             * - The error message.
+             * - And the redirect link after the insertion ends.
              */
 			'success_message'	=> lang('links.create.messages.success'),
 			'failure_message'	=> lang('links.create.messages.failure'),
@@ -88,18 +88,18 @@ class Admin extends Admin_Controller
 		);
 		
         /**
-         * La encore, nous utiliserons le Stream CP qui s'occupera de tout en fonction de son paramétrage.
+         * Again, we will use the Stream CP takes care of everything in terms of its setting.
          */
 		$this->streams->cp->entry_form('links', 'links', 'new', NULL, TRUE, $extra);
     }
 
     /**
-     * L’édition d'un élément
+     * Editing an element
      */
     public function edit($id = 0)
     {
         /**
-         * De la même façon que l'insertion de nouveaux liens, l’édition paramètre le Stream CP.
+         * The same way that the insertion of new links, edit the Stream parameter CP.
          */
         $extra = array(
             'title'				=> lang('links.edit.title'),
@@ -112,13 +112,13 @@ class Admin extends Admin_Controller
     }
 
     /**
-     * La suppression d'un élément
+     * Deleting an element
      */
     public function delete($id = 0)
     {
         /**
-         * Ici, rien de plus simple. Nous supprimons l'élément de notre stream
-         * avec le Stream entries, grâce à son id.
+         * Here, nothing is simple. We remove the element of our
+         * stream with Stream entries through its id.
          */
         if ($this->streams->entries->delete_entry($id, 'links', 'links'))
         {
